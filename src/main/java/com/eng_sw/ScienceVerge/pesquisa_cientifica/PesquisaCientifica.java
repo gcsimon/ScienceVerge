@@ -3,9 +3,7 @@ package com.eng_sw.ScienceVerge.pesquisa_cientifica;
 import com.sun.istack.NotNull;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "PESQUISA_CIENTIFICA")
 @Builder
@@ -17,6 +15,7 @@ public class PesquisaCientifica {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "NOME")
@@ -29,7 +28,7 @@ public class PesquisaCientifica {
 
     @Column(name = "IS_PRIVATE")
     @NotNull
-    private Boolean isPrivite;
+    private Boolean isPrivate;
 
     //comentario pode ser o valor ou lista de materiais
     @Column(name = "COMENTARIO")

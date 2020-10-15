@@ -11,4 +11,5 @@ public interface PesquisaCientificaRepository extends PagingAndSortingRepository
     public List<PesquisaCientifica> findAllByNomeIgnoreCase(String nome);
 
     public PesquisaCientifica save(PesquisaCientifica pesquisaCientifica);
+
 }

@@ -32,4 +32,10 @@ public class PesquisaCientificaService {
         return pesquisas;
 
     }
+
+    public PesquisaCientifica create(PesquisaCientifica pesquisa) {
+        PesquisaCientifica pesquisaCientifica = pesquisaCientificaRepository.save(pesquisa);
+        return pesquisaCientifica;
+
+    }
 }
