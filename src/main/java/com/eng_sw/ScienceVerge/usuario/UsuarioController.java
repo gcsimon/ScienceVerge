@@ -28,5 +28,17 @@ public class UsuarioController {
             }
             return ResponseEntity.ok().body(usuario);
         }
+
+        @GetMapping("/usuario")
+        public ResponseEntity<List<Usuario>> findAll()
+        {
+            List<Usuario> usuarioList = usuarioService.findAllUsuario();
+
+            if(usuarioList == null)
+            {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok().body(usuarioList);
+        }
 }
 
