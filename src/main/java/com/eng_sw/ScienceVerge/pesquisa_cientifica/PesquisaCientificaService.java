@@ -13,11 +13,9 @@ public class PesquisaCientificaService {
     private PesquisaCientificaRepository pesquisaCientificaRepository;
 
     public List<PesquisaCientifica> findAllPesquisasCientificas() {
-
         List<PesquisaCientifica> pesquisasList = new ArrayList<>();
         pesquisaCientificaRepository.findAll().forEach(pesquisa -> pesquisasList.add(pesquisa));
         return pesquisasList;
-
     }
 
     public PesquisaCientifica findPesquisaCientificaById(Long id) throws Exception {
@@ -30,12 +28,10 @@ public class PesquisaCientificaService {
     public List<PesquisaCientifica> findPesquisaByNome(String nome) {
         List<PesquisaCientifica> pesquisas = pesquisaCientificaRepository.findAllByNomeIgnoreCase(nome);
         return pesquisas;
-
     }
 
     public PesquisaCientifica create(PesquisaCientifica pesquisa) {
         PesquisaCientifica pesquisaCientifica = pesquisaCientificaRepository.save(pesquisa);
         return pesquisaCientifica;
-
     }
 }
