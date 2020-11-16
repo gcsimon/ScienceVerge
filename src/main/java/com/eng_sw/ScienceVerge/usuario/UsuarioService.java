@@ -10,16 +10,15 @@ import java.util.List;
 
 @Service
 public class UsuarioService {
+    @Autowired
     private static UsuarioRepository usuarioRepository;
 
-    @Autowired
     public List<Usuario> findAllUsuario() {
         List<Usuario> usuarioList = new ArrayList<>();
         usuarioRepository.findAll().forEach(usuario->usuarioList.add(usuario));
         return usuarioList;
     }
 
-    @Autowired
     public static Usuario create(Usuario user) {
         Usuario usuario = usuarioRepository.save(user);
         return usuario;
