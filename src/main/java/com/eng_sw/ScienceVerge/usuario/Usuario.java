@@ -32,5 +32,5 @@ import javax.persistence.*;
 
         @Column(name = "SENHA")
         @NotNull
-        private int senha;
+        private String senha;
     }

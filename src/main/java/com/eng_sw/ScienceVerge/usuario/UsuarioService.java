@@ -23,4 +23,15 @@ public class UsuarioService {
         Usuario usuario = usuarioRepository.save(user);
         return usuario;
     }
+
+    public Usuario login(String email, String password) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+
+        if(usuario.getSenha().equals(password)){
+            return usuario;
+        }
+        else {
+            return new Usuario();
+        }
+    }
 }

@@ -15,6 +15,13 @@ public class UsuarioController {
         @Autowired
         private UsuarioService usuarioService;
 
+
+        @PostMapping("/usuario/login")
+        public ResponseEntity<Usuario> login(@RequestBody Login login) {
+
+            return ResponseEntity.ok().body(usuarioService.login(login.getEmail(), login.getSenha()));
+        }
+
         @PostMapping("/usuario/create")
         public ResponseEntity<Usuario> create(@RequestBody Usuario user) {
             Usuario usuario = usuarioService.create(user);
