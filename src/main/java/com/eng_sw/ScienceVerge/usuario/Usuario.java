@@ -26,6 +26,9 @@ import javax.persistence.*;
         @NotNull
         private String funcao;
 
+        @Column(name = "LATTES")
+        private String lattes;
+
         @Column(name = "EMAIL")
         @NotNull
         private String email;

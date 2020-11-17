@@ -23,4 +23,10 @@ public class UsuarioService {
         Usuario usuario = usuarioRepository.save(user);
         return usuario;
     }
+
+    public Usuario findUsuarioByEmail(String email)
+    {
+        Usuario user = usuarioRepository.findByEmailIgnoreCase(email);
+        return  user;
+    }
 }
