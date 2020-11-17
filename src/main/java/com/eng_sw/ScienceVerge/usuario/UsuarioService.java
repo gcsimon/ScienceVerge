@@ -31,6 +31,7 @@ public class UsuarioService {
         Usuario usuario = usuarioRepository.findByEmailIgnoreCase(email);
 
         if(usuario.getSenha().equals(password)){
+            usuario.setSenha("");
             return usuario;
         }
         else {
