@@ -11,8 +11,11 @@ public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, L
 
     public List<Usuario> findAllByNomeIgnoreCase(String nome);
 
-    public Usuario findByEmail(String email);
+    public Usuario findByEmailIgnoreCase(String email);
 
     public Usuario save(Usuario usuario);
+
+
+
 
 }

@@ -10,22 +10,25 @@ import java.util.List;
 
 @Service
 public class UsuarioService {
+
     @Autowired
-    private static UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
 
     public List<Usuario> findAllUsuario() {
         List<Usuario> usuarioList = new ArrayList<>();
-        usuarioRepository.findAll().forEach(usuario->usuarioList.add(usuario));
+
+        usuarioRepository.findAll().forEach(user -> usuarioList.add(user));
+
         return usuarioList;
     }
 
-    public static Usuario create(Usuario user) {
+    public Usuario create(Usuario user) {
         Usuario usuario = usuarioRepository.save(user);
         return usuario;
     }
 
     public Usuario login(String email, String password) {
-        Usuario usuario = usuarioRepository.findByEmail(email);
+        Usuario usuario = usuarioRepository.findByEmailIgnoreCase(email);
 
         if(usuario.getSenha().equals(password)){
             return usuario;
