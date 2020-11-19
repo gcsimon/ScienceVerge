@@ -30,6 +30,10 @@ public class PesquisaCientifica {
     @NotNull
     private Boolean isPrivate;
 
+    @Column(name = "ATIVA")
+    @NotNull
+    private Boolean Ativa;
+
     //comentario pode ser o valor ou lista de materiais
     @Column(name = "COMENTARIO")
     @NotNull
