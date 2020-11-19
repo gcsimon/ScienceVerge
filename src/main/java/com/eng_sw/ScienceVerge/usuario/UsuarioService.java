@@ -42,8 +42,8 @@ public class UsuarioService {
     {
         String email = user.getEmail();
         Usuario usuario = usuarioRepository.findByEmailIgnoreCase(email);
-        usuario = user;
-        usuario = usuarioRepository.save(usuario);
+        user.setId(usuario.getId());
+        usuario = usuarioRepository.save(user);
         return usuario;
     }
 }
