@@ -15,6 +15,8 @@ public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, L
 
     public Usuario save(Usuario usuario);
 
+    public Usuario findById(long id);
+
 
 
 

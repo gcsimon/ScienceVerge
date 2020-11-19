@@ -22,7 +22,6 @@ public class PesquisaCientificaService {
         PesquisaCientifica pesquisas = pesquisaCientificaRepository.findById(id).orElseThrow(() -> new Exception("Not found"));
 
         return pesquisas;
-
     }
 
     public List<PesquisaCientifica> findPesquisaByNome(String nome) {

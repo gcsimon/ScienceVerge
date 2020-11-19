@@ -43,5 +43,16 @@ public class UsuarioController {
             }
             return ResponseEntity.ok().body(usuarioList);
         }
+
+        @PostMapping("/usuario/editor")
+        public ResponseEntity<Usuario> editor(@RequestBody Usuario user)
+        {
+            Usuario usuario = usuarioService.findByEmail(user);
+            if(usuario == null)
+            {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok().body(usuario);
+        }
 }
 

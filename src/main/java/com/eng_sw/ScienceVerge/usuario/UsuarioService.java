@@ -38,4 +38,12 @@ public class UsuarioService {
             return new Usuario();
         }
     }
+    public Usuario findByEmail(Usuario user)
+    {
+        String email = user.getEmail();
+        Usuario usuario = usuarioRepository.findByEmailIgnoreCase(email);
+        usuario = user;
+        usuario = usuarioRepository.save(usuario);
+        return usuario;
+    }
 }
